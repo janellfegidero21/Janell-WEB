@@ -279,7 +279,7 @@ export default function App() {
             <div className="portrait-frame">
               <div className="portrait-inner">
                 <img
-                  src={`${import.meta.env.BASE_URL}`}
+                  src={`${import.meta.env.BASE_URL}Font-Picture.jpg`}
                   alt="Marketing Portfolio"
                 />
               </div>
@@ -324,13 +324,13 @@ export default function App() {
         title: "Certified Meta Business Partner",
         issuer: "Marketing Master IO",
         date: "2025",
-        image: "/media/certificate-01.jpg",
+        image: "certificate-01.jpg",
       },
       
     ].map((cert, index) => (
       <div className="certificate-card" key={index}>
         <div className="certificate-image">
-          <img src={`${import.meta.env.BASE_URL}Font-Picture.jpg`} alt={cert.title} />
+          <img src={`${import.meta.env.BASE_URL}certificate-01.jpg`} alt={cert.title} />
         </div>
 
         <div className="certificate-info">
