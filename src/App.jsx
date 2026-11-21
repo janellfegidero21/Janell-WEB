@@ -324,7 +324,7 @@ export default function App() {
         title: "Certified Meta Business Partner",
         issuer: "Marketing Master IO",
         date: "2025",
-        image: "certificate-01.jpg",
+        image: "/certificate-01.jpg",
       },
       
     ].map((cert, index) => (
