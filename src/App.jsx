@@ -219,6 +219,11 @@ function Portfolio() {
 export default function App() {
   const [open, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const media = (path) =>
+  `${import.meta.env.BASE_URL}${path
+    .split("/")
+    .map(encodeURIComponent)
+    .join("/")}`;
   const nav = [
     ["Home", "#home"],
     ["About", "#about"],
@@ -330,7 +335,7 @@ export default function App() {
     ].map((cert, index) => (
       <div className="certificate-card" key={index}>
         <div className="certificate-image">
-          <img src={`${import.meta.env.BASE_URL}Certificate-01.jpg`} alt={cert.title} />
+          <img src={cert.image} alt={cert.title} />
         </div>
 
         <div className="certificate-info">
