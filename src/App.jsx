@@ -219,11 +219,7 @@ function Portfolio() {
 export default function App() {
   const [open, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const media = (path) =>
-  `${import.meta.env.BASE_URL}${path
-    .split("/")
-    .map(encodeURIComponent)
-    .join("/")}`;
+  
   const nav = [
     ["Home", "#home"],
     ["About", "#about"],
