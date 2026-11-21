@@ -279,7 +279,7 @@ export default function App() {
             <div className="portrait-frame">
               <div className="portrait-inner">
                 <img
-                  src={`${import.meta.env.BASE_URL}Font-Picture.jpg`}
+                  src={`${import.meta.env.BASE_URL}`}
                   alt="Marketing Portfolio"
                 />
               </div>
