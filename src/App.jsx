@@ -330,7 +330,7 @@ export default function App() {
     ].map((cert, index) => (
       <div className="certificate-card" key={index}>
         <div className="certificate-image">
-          <img src={`${import.meta.env.BASE_URL}certificate-01.jpg`} alt={cert.title} />
+          <img src={`${import.meta.env.BASE_URL}Font-Picture.jpg`} alt={cert.title} />
         </div>
 
         <div className="certificate-info">
