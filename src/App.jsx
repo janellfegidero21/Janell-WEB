@@ -415,16 +415,13 @@ export default function App() {
         <section className="section about" id="about">
           <div className="hero-video">
             <video 
+            src={`${import.meta.env.BASE_URL}hero-video.mp4`}
             autoPlay
              muted 
              loop
             playsInline
              preload
              ="auto">
-              <source
-                    src={`${import.meta.env.BASE_URL}hero-video.mp4`}
-                    type="video/mp4"
-                  />
             </video>
           </div>
           <div>
