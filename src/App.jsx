@@ -421,7 +421,10 @@ export default function App() {
             playsInline
              preload
              ="auto">
-              <source src="/media/hero-video.mp4" type="video/mp4" />
+              <source
+                    src={`${import.meta.env.BASE_URL}hero-video.mp4`}
+                    type="video/mp4"
+                  />
             </video>
           </div>
           <div>
