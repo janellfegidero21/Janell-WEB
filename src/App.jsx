@@ -106,7 +106,7 @@ function Portfolio() {
         {media && item.type === "video" ? (
           <video
             key={item.media}
-            src={item.media}
+            src={item.media} 
             poster={item.poster || undefined}
             controls
             playsInline
@@ -482,13 +482,12 @@ export default function App() {
           </div>
         </section>
        <section className="section" id="gallery">
- 
-<section className="section" id="gallery">
+        <section className="section" id="gallery">
   <div className="heading">
     <div>
       <small className="eyebrow">MY CREATIVE WORK</small>
       <h2>
-        Explore my 
+        Explore my
         <br />
         <em>Gallery.</em>
       </h2>
@@ -499,6 +498,7 @@ export default function App() {
       designs, and visual content.
     </p>
   </div>
+
   <div className="gallery-grid">
     {site.gallery.map((item, index) => (
       <div
@@ -514,7 +514,10 @@ export default function App() {
           }
         }}
       >
-        <img src={item.image} alt={item.title} />
+        <img
+          src={`${import.meta.env.BASE_URL}media/Picture%20Gallery/gallery-${String(index + 1).padStart(2, "0")}.jpg`}
+          alt={item.title}
+        />
 
         <div className="gallery-overlay">
           <span>{item.category}</span>
@@ -525,6 +528,7 @@ export default function App() {
     ))}
   </div>
 </section>
+
 {/* GALLERY LIGHTBOX */}
 {selectedImage !== null && (
   <div
@@ -561,7 +565,7 @@ export default function App() {
       onClick={(e) => e.stopPropagation()}
     >
       <img
-        src={site.gallery[selectedImage].image}
+        src={`${import.meta.env.BASE_URL}media/Picture%20Gallery/gallery-${String(selectedImage + 1).padStart(2, "0")}.jpg`}
         alt={site.gallery[selectedImage].title}
       />
 
@@ -589,6 +593,8 @@ export default function App() {
   </div>
 )}
 </section>
+ 
+
         <section className="section" id="advertising">
           <div className="heading">
             <div>
