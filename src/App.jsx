@@ -68,6 +68,8 @@ const tools = [
   { name: "Google Chrome", icon: Globe, color: "#EA4335" },
   { name: "Google Meet", icon: Video, color: "#00897B" },
   { name: "Facebook", icon: Facebook, color: "#3104fa" },
+  { name: "Instagram", icon: Instagram, color: "#F56040" },
+  
 ];
 
 function Portfolio() {
