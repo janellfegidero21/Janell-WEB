@@ -1353,4 +1353,24 @@ footer {
     top: 12px;
     right: 12px;
   }
+
+  /* FOR ABOUT ME */
+.about-description {
+  max-width: 680px;
+}
+
+.about-description p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.about-description p:first-child {
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 500;
+  text-align: justify;
+}
 }

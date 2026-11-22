@@ -147,7 +147,7 @@ export const site = {
     tag: "Car",
   },
 
-   /* {
+   {
       title: "Social Media Campaign",
       category: "Social Media",
       description: "Social content designed to build awareness and engagement.",
@@ -225,7 +225,7 @@ export const site = {
       poster: "",
       tag: "RETARGETING AD",
     },
-    */
+    
   ],
   ads: [
     {
@@ -249,24 +249,24 @@ export const site = {
   ],
   testimonials: [
     {
-      quote: "Replace this sample with a genuine, approved client review.",
-      name: "Client Name",
-      role: "Business Owner",
+      quote: "Janell effectively managed our Facebook and Instagram ad campaigns, increasing property inquiries, improving engagement, and attracting potential buyers. Her strategic approach and consistent optimization made a positive impact on our business.",
+      name: "FAMHOME",
+      role: "Real State",
     },
     {
-      quote: "Add another approved review describing the value you delivered.",
-      name: "Client Name",
-      role: "Marketing Client",
+      quote: "Janell did an excellent job managing our Facebook and Instagram ad campaigns. Her strategic targeting and consistent optimization helped increase customer inquiries, improve engagement, and attract potential car buyers. We appreciate her professionalism and dedication to delivering results.",
+      name: "Auto Boutique (Automotive Industry)",
+      role: "OWNER",
     },
      {
-      quote: "Add another approved review describing the value you delivered.",
-      name: "Client Name",
-      role: "Marketing Client",
+      quote: "Janell did a great job managing our Facebook and Instagram ad campaigns. Her strategic approach helped increase customer inquiries, improve audience engagement, and attract potential car buyers. We appreciate her dedication, professionalism, and consistent campaign optimization",
+      name: "OKS Car (Automotive Industry)",
+      role: "OWNER",
     },
      {
-      quote: "Add another approved review describing the value you delivered.",
-      name: "Client Name",
-      role: "Marketing Client",
+      quote: "Janell did an excellent job managing our Facebook and Instagram ad campaigns. Her strategic targeting and campaign optimization helped increase customer inquiries, boost engagement, and attract potential customers. We appreciate her creativity, professionalism, and dedication to our brand's growth",
+      name: "Skin Drip (Beauty & Skincare Industry)",
+      role: "Client",
     },
   ],
     

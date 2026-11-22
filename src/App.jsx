@@ -427,42 +427,48 @@ export default function App() {
             </video>
           </div>
           <div>
-            <h2 className="eyebrow">ABOUT <em>ME</em></h2> 
-            <h4>
-            <p>
-                   I'm Janell, a Meta Ads Media Buyer with nearly two years of
-              hands-on experience managing Facebook and Instagram advertising
-              campaigns for businesses across different industries.
-            </p>
-            <p>
-                  I specialize in setting up, managing, and optimizing paid
-              advertising campaigns focused on lead generation, customer
-              acquisition, and business growth. My experience includes campaign
-              planning, audience research, budget management, performance
-              monitoring, and data-driven optimization.
-            </p>
-            <p>
-                  Throughout my experience, I've worked with businesses to develop
-              advertising strategies aligned with their marketing objectives,
-              helping them reach relevant audiences and generate potential
-              customer inquiries through paid advertising. I understand that
-              successful advertising requires more than simply launching
-              campaigns. It involves continuously analyzing performance,
-              identifying opportunities for improvement, managing budgets
-              efficiently, and making informed decisions based on campaign data.
-            </p>
-            <p>
-                  As I expand into the international market, I aim to bring my
-              practical experience, attention to detail, and commitment to
-              delivering reliable advertising support to businesses and agencies
-              looking to strengthen their paid advertising efforts.
-            </p>
-            </h4>
+  <h2 className="eyebrow">
+    ABOUT <em>ME</em>
+  </h2>
 
-            <a className="link" href="#contact">
-              Let's talk about your goals ↗
-            </a>
-          </div>
+  <div className="about-description">
+    <p>
+      Hi, I'm Janell — a Meta Ads Media Buyer with nearly two years
+      of hands-on experience helping businesses grow through
+      strategic Facebook and Instagram advertising.
+    </p>
+
+    <p>
+      I specialize in planning, launching, managing, and optimizing
+      paid advertising campaigns designed to generate quality leads,
+      attract potential customers, and support business growth.
+      My experience covers audience research, campaign setup,
+      budget management, performance tracking, and data-driven
+      optimization.
+    </p>
+
+    <p>
+      I believe successful advertising goes beyond simply running
+      ads. It requires understanding business goals, reaching the
+      right audience, analyzing campaign performance, and making
+      strategic adjustments to improve results. I focus on making
+      informed decisions that help businesses maximize their
+      advertising budgets and get more value from their campaigns.
+    </p>
+
+    <p>
+      As I expand into the international market, I'm excited to
+      collaborate with businesses, entrepreneurs, and marketing
+      agencies that need reliable Meta Ads support. I bring practical
+      experience, attention to detail, and a strong commitment to
+      helping clients achieve their marketing objectives.
+    </p>
+  </div>
+
+  <a className="link" href="#contact">
+    Let's talk about your goals ↗
+  </a>
+</div>
         </section>
         <section className="work" id="work">
           <div className="section">
