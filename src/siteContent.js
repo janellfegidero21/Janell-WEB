@@ -412,8 +412,40 @@ export const site = {
       title: "Manage Page",
       category: "Meta Manage",
     },
-  ]
+
+     ], 
     
+spotlight: {
+    sectionTitle: "Client Meeting",
+    sectionDescription: "A deep dive into our successful Meta ad campaign.",
+    mainItem: {
+      image: "media/Spot Light/Spotlight-01.jpg",
+      title: "Meta Ads Training Workshop",
+      description: "Hands-on campaign optimization session and training with industry peers.",
+    },
+    subItems: [
+      {
+        image: "media/Spot Light/Spotlightsub-02.jpg",
+        title: "Certificate Presentation",
+        description: "Official awarding of the Meta Business Partner certification.",
+      },
+      {
+        image: "media/Spot Light/Spotlightsub-03.jpg",
+        title: "Strategy & Planning",
+        description: "Collaborating on real-world client campaign strategies and budget allocation.",
+      },
+      {
+        image: "media/Spot Light/Spotlightsub-04.jpg",
+        title: "Performance Review",
+        description: "Analyzing campaign metrics, lead generation data, and ROI optimization.",
+      },
+      {
+        image: "media/Spot Light/Spotlightsub-05.jpg",
+        title: "Team Milestone",
+        description: "Celebrating successful completion of the digital marketing program.",
+      },
+    ],
+  },
 };
 
   

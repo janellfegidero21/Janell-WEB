@@ -1373,4 +1373,146 @@ footer {
   font-weight: 500;
   text-align: justify;
 }
+/* SPOTLIGHT SECTION */
+.spotlight-section .spotlight-wrapper {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
+.spotlight-section .main-image {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+.spotlight-section .main-image img {
+  width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+  display: block;
+}
+
+}
+/* SPOTLIGHT CONTAINER & CAPTION */
+.spotlight-wrapper {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.spotlight-main-container {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.spotlight-main-container img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+.spotlight-caption {
+  padding: 22px 28px;
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid #f0eef5;
+}
+
+.spotlight-caption h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: #29394e;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.spotlight-caption p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #607286;
+}
+
+/* THUMBNAIL BUTTONS */
+.spotlight-thumbs {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.spotlight-thumb-btn {
+  width: 160px;
+  padding: 0;
+  border: 2px solid #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.spotlight-thumb-btn img {
+  width: 100%;
+  height: 95px;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb-label {
+  padding: 8px 10px;
+  background: #ffffff;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb-label small {
+  font-size: 10px;
+  font-weight: 600;
+  color: #526d83;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.spotlight-thumb-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #609dc8;
+}
+
+.spotlight-thumb-btn:hover .thumb-label small {
+  color: #29394e;
+}
+
+@media (max-width: 650px) {
+  .spotlight-thumb-btn {
+    width: 130px;
+  }
+  .spotlight-thumb-btn img {
+    height: 75px;
+  }
+  .spotlight-caption {
+    padding: 16px 20px;
+  }
+}
+

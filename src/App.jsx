@@ -22,18 +22,17 @@ import {
   MessageCircle,
   Globe,
   ExternalLink,
-   BarChart3,
+  BarChart3,
   BriefcaseBusiness,
   CalendarCheck,
   Table2,
   FolderOpen,
   FileText,
-  
-} 
-
-from "lucide-react";
+} from "lucide-react";
 import { site } from "./siteContent.js";
+
 const icons = [Video, Share2, Target, Palette];
+
 function Ad({ ad }) {
   return (
     <article className="ad">
@@ -52,10 +51,7 @@ function Ad({ ad }) {
       </div>
     </article>
   );
-  
 }
-
-import {} from "lucide-react";
 
 const tools = [
   { name: "Meta Ads Manager", icon: BarChart3, color: "#1877F2" },
@@ -69,7 +65,6 @@ const tools = [
   { name: "Google Meet", icon: Video, color: "#00897B" },
   { name: "Facebook", icon: Facebook, color: "#3104fa" },
   { name: "Instagram", icon: Instagram, color: "#F56040" },
-  
 ];
 
 function Portfolio() {
@@ -91,6 +86,7 @@ function Portfolio() {
   if (!item) return null;
   const media = item.media && !item.media.includes("replace-with-");
   const move = (d) => setIndex((n) => (n + d + items.length) % items.length);
+
   return (
     <div className="portfolio">
       <div className="filters">
@@ -108,7 +104,7 @@ function Portfolio() {
         {media && item.type === "video" ? (
           <video
             key={item.media}
-            src={item.media} 
+            src={item.media}
             poster={item.poster || undefined}
             controls
             playsInline
@@ -218,9 +214,37 @@ function Portfolio() {
     </div>
   );
 }
+
 export default function App() {
   const [open, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+
+  // Safe Spotlight state initialization
+  const rawSpotlight = site.spotlight || {};
+  const initialMainItem = rawSpotlight.mainItem || {
+    image: rawSpotlight.mainImage || "media/Spot Light/Spotlight-01.jpg",
+    title: rawSpotlight.title || "Featured Case Study",
+    description: rawSpotlight.description || "A deep dive into our campaign.",
+  };
+  const initialSubItems =
+    rawSpotlight.subItems ||
+    (rawSpotlight.subImages || []).map((img, idx) => ({
+      image: img,
+      title: `Detail ${idx + 1}`,
+      description: "",
+    }));
+
+  const [mainItem, setMainItem] = useState(initialMainItem);
+  const [subItems, setSubItems] = useState(initialSubItems);
+
+  const handleSubItemClick = (clickedItem, index) => {
+    const oldMain = mainItem;
+    setMainItem(clickedItem);
+    const newSubs = [...subItems];
+    newSubs[index] = oldMain;
+    setSubItems(newSubs);
+  };
+
   const nav = [
     ["Home", "#home"],
     ["About", "#about"],
@@ -229,6 +253,7 @@ export default function App() {
     ["Advertising", "#advertising"],
     ["Contact", "#contact"],
   ];
+
   return (
     <div id="home" className="app">
       <header>
@@ -254,9 +279,7 @@ export default function App() {
       <main>
         <section className="hero">
           <div>
-            <small className="eyebrow">
-              DIGITAL MARKETING
-            </small>
+            <small className="eyebrow">DIGITAL MARKETING</small>
             <h1>{site.tagline}</h1>
             <h2>{site.subTagline}</h2>
             <p>{site.intro}</p>
@@ -303,50 +326,92 @@ export default function App() {
             GENERATION　 •　CAPMPAIGN OPTIMIZATION{" "}
           </h2>
         </div>
-          <section className="section" id="certificates">
-  <div className="heading">
-    <div>
-      <small className="eyebrow">PROFESSIONAL DEVELOPMENT</small>
-      <h2>
-          Course &<em>Certificate</em>
-      <br />
-      
-        </h2>
-    </div>
+        <section className="section" id="certificates">
+          <div className="heading">
+            <div>
+              <small className="eyebrow">PROFESSIONAL DEVELOPMENT</small>
+              <h2>
+                Course &<em>Certificate</em>
+                <br />
+              </h2>
+            </div>
+            <p>
+              A collection of certifications, training programs, and achievements
+              that represent my skills and growth.
+            </p>
+          </div>
+          <div className="certificate-grid">
+            {[
+              {
+                title: "Certified Meta Business Partner",
+                issuer: "Marketing Master IO",
+                date: "2025",
+                image: "/certificate-01.jpg",
+              },
+            ].map((cert, index) => (
+              <div className="certificate-card" key={index}>
+                <div className="certificate-image">
+                  <img
+                    src={`${import.meta.env.BASE_URL}certificate-01.jpg`}
+                    alt={cert.title}
+                  />
+                </div>
+                <div className="certificate-info">
+                  <span className="certificate-label">CERTIFICATE</span>
+                  <h3>{cert.title}</h3>
+                  <p>{cert.issuer}</p>
+                  <small>{cert.date}</small>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
-    <p>
-      A collection of certifications, training programs,
-      and achievements that represent my skills and growth.
-    </p>
-  </div>
+        {/* Spotlight Section */}
+        <section className="section spotlight-section" id="spotlight">
+          <div className="heading">
+            <div>
+              <small className="eyebrow">FEATURED WORK</small>
+              <h2>{rawSpotlight.sectionTitle || rawSpotlight.title || "Featured Case Study"}</h2>
+            </div>
+            <p>{rawSpotlight.sectionDescription || rawSpotlight.description || ""}</p>
+          </div>
 
-  <div className="certificate-grid">
-    {[
-      {
-        title: "Certified Meta Business Partner",
-        issuer: "Marketing Master IO",
-        date: "2025",
-        image: "/certificate-01.jpg",
-      },
-      
-    ].map((cert, index) => (
-      <div className="certificate-card" key={index}>
-        <div className="certificate-image">
-          <img src={`${import.meta.env.BASE_URL}certificate-01.jpg`} alt={cert.title} />
-        </div>
+          <div className="spotlight-wrapper">
+            {/* Featured Main Display with Active Caption */}
+            <div className="spotlight-main-container">
+              <img
+                src={`${import.meta.env.BASE_URL}${mainItem.image}`}
+                alt={mainItem.title}
+              />
+              <div className="spotlight-caption">
+                <h3>{mainItem.title}</h3>
+                <p>{mainItem.description}</p>
+              </div>
+            </div>
 
-        <div className="certificate-info">
-          <span className="certificate-label">
-            CERTIFICATE
-          </span>
-          <h3>{cert.title}</h3>
-          <p>{cert.issuer}</p>
-          <small>{cert.date}</small>
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
+            {/* Thumbnail Row Below */}
+            <div className="spotlight-thumbs">
+              {subItems.map((item, i) => (
+                <button
+                  key={i}
+                  className="spotlight-thumb-btn"
+                  onClick={() => handleSubItemClick(item, i)}
+                  aria-label={`View ${item.title}`}
+                >
+                  <img
+                    src={`${import.meta.env.BASE_URL}${item.image}`}
+                    alt={item.title}
+                    loading="lazy"
+                  />
+                  <div className="thumb-label">
+                    <small>{item.title}</small>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="section" id="services">
           <div className="heading">
@@ -381,94 +446,74 @@ export default function App() {
         </section>
         <section className="banner">
           <section className="tools-section">
-  <div className="tools-header">
-    <span className="section-label">
-      MY WORKSPACE · DIGITAL TOOLS
-    </span>
-
-    <h2>Tools I use.</h2>
-
-    <p>
-      Platforms and applications I use for marketing,
-      productivity, design, and collaboration.
-    </p>
-  </div>
-
-  <div className="tools-grid">
-    {tools.map((tool) => {
-      const Icon = tool.icon;
-
-      return (
-        <div className="tool-card" key={tool.name}>
-          <div
-            className="tool-icon"
-            style={{ "--tool-color": tool.color }}
-          >
-            <Icon size={25} strokeWidth={1.8} />
-          </div>
-
-          <span>{tool.name}</span>
-        </div>
-      );
-    })}
-  </div>
-</section>
+            <div className="tools-header">
+              <span className="section-label">MY WORKSPACE · DIGITAL TOOLS</span>
+              <h2>Tools I use.</h2>
+              <p>
+                Platforms and applications I use for marketing, productivity,
+                design, and collaboration.
+              </p>
+            </div>
+            <div className="tools-grid">
+              {tools.map((tool) => {
+                const Icon = tool.icon;
+                return (
+                  <div className="tool-card" key={tool.name}>
+                    <div
+                      className="tool-icon"
+                      style={{ "--tool-color": tool.color }}
+                    >
+                      <Icon size={25} strokeWidth={1.8} />
+                    </div>
+                    <span>{tool.name}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
         </section>
         <section className="section about" id="about">
           <div className="hero-video">
-            <video 
-            src={`${import.meta.env.BASE_URL}hero-video.mp4`}
-            autoPlay
-             muted 
-             loop
-            playsInline
-             preload
-             ="auto">
-            </video>
+            <video
+              src={`${import.meta.env.BASE_URL}hero-video.mp4`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            ></video>
           </div>
           <div>
-  <h2 className="eyebrow">
-    ABOUT <em>ME</em>
-  </h2>
-
-  <div className="about-description">
-    <p>
-      Hi, I'm Janell — a Meta Ads Media Buyer with nearly two years
-      of hands-on experience helping businesses grow through
-      strategic Facebook and Instagram advertising.
-    </p>
-
-    <p>
-      I specialize in planning, launching, managing, and optimizing
-      paid advertising campaigns designed to generate quality leads,
-      attract potential customers, and support business growth.
-      My experience covers audience research, campaign setup,
-      budget management, performance tracking, and data-driven
-      optimization.
-    </p>
-
-    <p>
-      I believe successful advertising goes beyond simply running
-      ads. It requires understanding business goals, reaching the
-      right audience, analyzing campaign performance, and making
-      strategic adjustments to improve results. I focus on making
-      informed decisions that help businesses maximize their
-      advertising budgets and get more value from their campaigns.
-    </p>
-
-    <p>
-      As I expand into the international market, I'm excited to
-      collaborate with businesses, entrepreneurs, and marketing
-      agencies that need reliable Meta Ads support. I bring practical
-      experience, attention to detail, and a strong commitment to
-      helping clients achieve their marketing objectives.
-    </p>
-  </div>
-
-  <a className="link" href="#contact">
-    Let's talk about your goals ↗
-  </a>
-</div>
+            <h2 className="eyebrow">
+              ABOUT <em>ME</em>
+            </h2>
+            <div className="about-description">
+              <p>
+                Hi, I'm Janell — a Meta Ads Media Buyer with nearly two years of
+                hands-on experience helping businesses grow through strategic
+                Facebook and Instagram advertising.
+              </p>
+              <p>
+                I specialize in planning, launching, managing, and optimizing
+                paid advertising campaigns designed to generate quality leads,
+                attract potential customers, and support business growth.
+              </p>
+              <p>
+                I believe successful advertising goes beyond simply running ads.
+                It requires understanding business goals, reaching the right
+                audience, analyzing campaign performance, and making strategic
+                adjustments to improve results.
+              </p>
+              <p>
+                As I expand into the international market, I'm excited to
+                collaborate with businesses, entrepreneurs, and marketing
+                agencies that need reliable Meta Ads support.
+              </p>
+            </div>
+            <a className="link" href="#contact">
+              Let's talk about your goals ↗
+            </a>
+          </div>
         </section>
         <section className="work" id="work">
           <div className="section">
@@ -489,119 +534,110 @@ export default function App() {
             <Portfolio />
           </div>
         </section>
-       <section className="section" id="gallery">
         <section className="section" id="gallery">
-  <div className="heading">
-    <div>
-      <small className="eyebrow">MY CREATIVE WORK</small>
-      <h2>
-        Explore my
-        <br />
-        <em>Gallery.</em>
-      </h2>
-    </div>
+          <div className="heading">
+            <div>
+              <small className="eyebrow">MY CREATIVE WORK</small>
+              <h2>
+                Explore my
+                <br />
+                <em>Gallery.</em>
+              </h2>
+            </div>
+            <p>
+              A collection of creative projects, digital campaigns, designs,
+              and visual content.
+            </p>
+          </div>
 
-    <p>
-      A collection of creative projects, digital campaigns,
-      designs, and visual content.
-    </p>
-  </div>
+          <div className="gallery-grid">
+            {site.gallery.map((item, index) => (
+              <div
+                className="gallery-card"
+                key={index}
+                role="button"
+                tabIndex={0}
+                onClick={() => setSelectedImage(index)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelectedImage(index);
+                  }
+                }}
+              >
+                <img
+                  src={`${import.meta.env.BASE_URL}media/Picture%20Gallery/gallery-${String(index + 1).padStart(2, "0")}.jpg`}
+                  alt={item.title}
+                />
+                <div className="gallery-overlay">
+                  <span>{item.category}</span>
+                  <h3>{item.title}</h3>
+                  <small>Click to preview ↗</small>
+                </div>
+              </div>
+            ))}
+          </div>
 
-  <div className="gallery-grid">
-    {site.gallery.map((item, index) => (
-      <div
-        className="gallery-card"
-        key={index}
-        role="button"
-        tabIndex={0}
-        onClick={() => setSelectedImage(index)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            setSelectedImage(index);
-          }
-        }}
-      >
-        <img
-          src={`${import.meta.env.BASE_URL}media/Picture%20Gallery/gallery-${String(index + 1).padStart(2, "0")}.jpg`}
-          alt={item.title}
-        />
-
-        <div className="gallery-overlay">
-          <span>{item.category}</span>
-          <h3>{item.title}</h3>
-          <small>Click to preview ↗</small>
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
-
-{/* GALLERY LIGHTBOX */}
-{selectedImage !== null && (
-  <div
-    className="gallery-lightbox"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Image preview"
-    onClick={() => setSelectedImage(null)}
-  >
-    <button
-      className="gallery-lightbox-close"
-      onClick={() => setSelectedImage(null)}
-      aria-label="Close preview"
-    >
-      <X size={28} />
-    </button>
-
-    <button
-      className="gallery-lightbox-nav prev"
-      onClick={(e) => {
-        e.stopPropagation();
-        setSelectedImage(
-          (selectedImage - 1 + site.gallery.length) %
-            site.gallery.length
-        );
-      }}
-      aria-label="Previous image"
-    >
-      <ChevronLeft size={32} />
-    </button>
-
-    <div
-      className="gallery-lightbox-content"
-      onClick={(e) => e.stopPropagation()}
-    >
-      <img
-        src={`${import.meta.env.BASE_URL}media/Picture%20Gallery/gallery-${String(selectedImage + 1).padStart(2, "0")}.jpg`}
-        alt={site.gallery[selectedImage].title}
-      />
-
-      <div className="gallery-lightbox-info">
-        <span>{site.gallery[selectedImage].category}</span>
-        <h3>{site.gallery[selectedImage].title}</h3>
-        <small>
-          {selectedImage + 1} / {site.gallery.length}
-        </small>
-      </div>
-    </div>
-
-    <button
-      className="gallery-lightbox-nav next"
-      onClick={(e) => {
-        e.stopPropagation();
-        setSelectedImage(
-          (selectedImage + 1) % site.gallery.length
-        );
-      }}
-      aria-label="Next image"
-    >
-      <ChevronRight size={32} />
-    </button>
-  </div>
-)}
-</section>
- 
+          {/* GALLERY LIGHTBOX */}
+          {selectedImage !== null && (
+            <div
+              className="gallery-lightbox"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Image preview"
+              onClick={() => setSelectedImage(null)}
+            >
+              <button
+                className="gallery-lightbox-close"
+                onClick={() => setSelectedImage(null)}
+                aria-label="Close preview"
+              >
+                <X size={28} />
+              </button>
+              <button
+                className="gallery-lightbox-nav prev"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage(
+                    (selectedImage - 1 + site.gallery.length) %
+                      site.gallery.length,
+                  );
+                }}
+                aria-label="Previous image"
+              >
+                <ChevronLeft size={32} />
+              </button>
+              <div
+                className="gallery-lightbox-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img
+                  src={`${import.meta.env.BASE_URL}media/Picture%20Gallery/gallery-${String(selectedImage + 1).padStart(2, "0")}.jpg`}
+                  alt={site.gallery[selectedImage].title}
+                />
+                <div className="gallery-lightbox-info">
+                  <span>{site.gallery[selectedImage].category}</span>
+                  <h3>{site.gallery[selectedImage].title}</h3>
+                  <small>
+                    {selectedImage + 1} / {site.gallery.length}
+                  </small>
+                </div>
+              </div>
+              <button
+                className="gallery-lightbox-nav next"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage(
+                    (selectedImage + 1) % site.gallery.length,
+                  );
+                }}
+                aria-label="Next image"
+              >
+                <ChevronRight size={32} />
+              </button>
+            </div>
+          )}
+        </section>
 
         <section className="section" id="advertising">
           <div className="heading">
