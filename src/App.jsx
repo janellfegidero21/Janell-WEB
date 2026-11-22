@@ -336,8 +336,8 @@ export default function App() {
               </h2>
             </div>
             <p>
-              A collection of certifications, training programs, and achievements
-              that represent my skills and growth.
+              A collection of certifications, training programs, and
+              achievements that represent my skills and growth.
             </p>
           </div>
           <div className="certificate-grid">
@@ -372,9 +372,17 @@ export default function App() {
           <div className="heading">
             <div>
               <small className="eyebrow">FEATURED WORK</small>
-              <h2>{rawSpotlight.sectionTitle || rawSpotlight.title || "Featured Case Study"}</h2>
+              <h2>
+                {rawSpotlight.sectionTitle ||
+                  rawSpotlight.title ||
+                  "Featured Case Study"}
+              </h2>
             </div>
-            <p>{rawSpotlight.sectionDescription || rawSpotlight.description || ""}</p>
+            <p>
+              {rawSpotlight.sectionDescription ||
+                rawSpotlight.description ||
+                ""}
+            </p>
           </div>
 
           <div className="spotlight-wrapper">
@@ -447,7 +455,9 @@ export default function App() {
         <section className="banner">
           <section className="tools-section">
             <div className="tools-header">
-              <span className="section-label">MY WORKSPACE · DIGITAL TOOLS</span>
+              <span className="section-label">
+                MY WORKSPACE · DIGITAL TOOLS
+              </span>
               <h2>Tools I use.</h2>
               <p>
                 Platforms and applications I use for marketing, productivity,
@@ -545,8 +555,8 @@ export default function App() {
               </h2>
             </div>
             <p>
-              A collection of creative projects, digital campaigns, designs,
-              and visual content.
+              A collection of creative projects, digital campaigns, designs, and
+              visual content.
             </p>
           </div>
 
@@ -627,9 +637,7 @@ export default function App() {
                 className="gallery-lightbox-nav next"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setSelectedImage(
-                    (selectedImage + 1) % site.gallery.length,
-                  );
+                  setSelectedImage((selectedImage + 1) % site.gallery.length);
                 }}
                 aria-label="Next image"
               >
