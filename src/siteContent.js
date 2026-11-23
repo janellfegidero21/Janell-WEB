@@ -1,6 +1,6 @@
 // EDIT YOUR WEBSITE CONTENT HERE — this is the main customization file.
 export const site = {
-  name: "JANELL",
+  name: "Hello nice to meet  you !",
   tagline: "META ADS MEDIA BUYER.",
   subTagline:
     "Helping Businesses Reach the Right Audience Through Strategic Meta Advertising",
@@ -9,6 +9,8 @@ export const site = {
   phone: "+63 993 281 5464",
   instagram: "https://instagram.com/",
   facebook: "https://www.facebook.com/janell.joy.albolero.fegidero",
+ 
+ 
   // Replace each placeholder URL with the real Melati profile/page link.
   socials: [
     {
@@ -155,7 +157,7 @@ export const site = {
       poster: "Dealer",
       tag: "Car",
     },
-
+/*
     {
       title: "Social Media Campaign",
       category: "Social Media",
@@ -234,6 +236,7 @@ export const site = {
       poster: "",
       tag: "RETARGETING AD",
     },
+    */
   ],
   ads: [
     {

@@ -258,9 +258,9 @@ export default function App() {
     <div id="home" className="app">
       <header>
         <a className="brand" href="#home">
-          <b>❤️</b>
-          {site.name}
-          <b>❤️</b>
+          <b></b>
+         <h2> ❤️ {site.name} ❤️ </h2> 
+          <b></b>
         </a>
         <nav className={open ? "open" : ""}>
           {nav.map(([n, h]) => (
@@ -736,7 +736,7 @@ export default function App() {
       <footer>
         <a className="brand" href="#home">
           <b>❤️</b>
-          {site.name}
+          
           <b>❤️</b>
         </a>
         <span>
