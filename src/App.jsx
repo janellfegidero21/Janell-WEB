@@ -582,7 +582,7 @@ function GalleryCard({ item, index, onClick, onKeyDown }) {
       style={{ transformOrigin: "center center" }}
     >
       <motion.img
-        src={item.image}
+        src={item.image} 
         alt={item.title}
         initial={{ scale: 1 }}
         whileHover={{ scale: 1.08 }}
