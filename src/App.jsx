@@ -413,8 +413,8 @@ function Portfolio() {
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
+        initials={{ opacity: 0, y: 10 }}
+        animates={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
         {items.map((p, i) => (

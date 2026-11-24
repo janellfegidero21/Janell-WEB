@@ -10,7 +10,6 @@ export const site = {
   instagram: "https://instagram.com/",
   facebook: "https://www.facebook.com/janell.joy.albolero.fegidero",
 
-
   // Replace each placeholder URL with the real Melati profile/page link.
   socials: [
     {
@@ -157,7 +156,7 @@ export const site = {
       poster: "Dealer",
       tag: "Car",
     },
-/*
+    /*
     {
       title: "Social Media Campaign",
       category: "Social Media",
@@ -287,34 +286,146 @@ export const site = {
 
   // PICTURE GALLERY
   gallery: [
-    { image: "/media/Picture Gallery/gallery-01.jpg", title: "Skin Drip Clinic", category: "Digital Marketing" },
-    { image: "/media/Picture Gallery/gallery-02.jpg", title: "Oks Autoworks Mechanic & Paint", category: "Digital Marketing" },
-    { image: "/media/Picture Gallery/gallery-03.jpg", title: "OKS CARS Auto Financing", category: "Digital Marketing" },
-    { image: "/media/Picture Gallery/gallery-04.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-05.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-06.jpg", title: " Page Engagement", category: "Meta Works" },
-    { image: "/media/Picture Gallery/gallery-07.jpg", title: " Page Engagement", category: "Meta Works" },
-    { image: "/media/Picture Gallery/gallery-08.jpg", title: " Page Engagement", category: "Meta Works" },
-    { image: "/media/Picture Gallery/gallery-09.jpg", title: " Page Engagement", category: "Meta Works" },
-    { image: "/media/Picture Gallery/gallery-10.jpg", title: " Page Engagement", category: "Meta Works" },
-    { image: "/media/Picture Gallery/gallery-11.jpg", title: " Page Engagement", category: "Meta Works" },
-    {image: "/media/Picture Gallery/gallery-12.jpg", title: " Page Engagement", category: "Meta Works" },
-    { image: "/media/Picture Gallery/gallery-13.jpg", title: " Page Engagement", category: "Meta Works" },
-    { image: "/media/Picture Gallery/gallery-14.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-15.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-16.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-17.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-18.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-19.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-20.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-21.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-22.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-23.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-24.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-25.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-26.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-27.jpg", title: "Manage Page", category: "Meta Manage" },
-    { image: "/media/Picture Gallery/gallery-28.jpg", title: "Manage Page", category: "Meta Manage" },
+    {
+      image: `${import.meta.env.BASE_URL}media/Picture%20Gallery/gallery-01.jpg`,
+      title: "Skin Drip Clinic",
+      category: "Digital Marketing",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-02.jpg",
+      title: "Oks Autoworks Mechanic & Paint",
+      category: "Digital Marketing",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-03.jpg",
+      title: "OKS CARS Auto Financing",
+      category: "Digital Marketing",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-04.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-05.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-06.jpg",
+      title: " Page Engagement",
+      category: "Meta Works",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-07.jpg",
+      title: " Page Engagement",
+      category: "Meta Works",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-08.jpg",
+      title: " Page Engagement",
+      category: "Meta Works",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-09.jpg",
+      title: " Page Engagement",
+      category: "Meta Works",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-10.jpg",
+      title: " Page Engagement",
+      category: "Meta Works",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-11.jpg",
+      title: " Page Engagement",
+      category: "Meta Works",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-12.jpg",
+      title: " Page Engagement",
+      category: "Meta Works",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-13.jpg",
+      title: " Page Engagement",
+      category: "Meta Works",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-14.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-15.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-16.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-17.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-18.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-19.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-20.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-21.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-22.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-23.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-24.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-25.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-26.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-27.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
+    {
+      image: "/media/Picture Gallery/gallery-28.jpg",
+      title: "Manage Page",
+      category: "Meta Manage",
+    },
   ],
 
   spotlight: {
