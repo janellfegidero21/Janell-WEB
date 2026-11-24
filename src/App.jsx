@@ -766,7 +766,7 @@ function ServiceCard({ service, index }) {
   return (
     <motion.article
       className="service"
-      key={service.title}
+      key={`${import.meta.env.BASE_URL}certificate-01.jpg`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
