@@ -1476,14 +1476,14 @@ export default function App() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             
-              <motion.h1
+              <motion.h
                 className="eyebrow"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
               >
                 ABOUT <em>ME</em>
-              </motion.h1>
+              </motion.h>
             
 
             <motion.div
